@@ -6,28 +6,28 @@
 
 export const person = {
   /** Small mark in the top-left of the nav, and the browser tab title. */
-  wordmark: 'Ruwaid',
+  wordmark: 'Dhanush',
   /** Shown huge on the hero, uppercase. */
-  name: 'Ruwaid',
+  name: 'Dhanush',
   /**
    * Optional second word, rendered in the gradient italic serif beside the
    * name — a surname works best. Leave '' for a single-word hero.
    */
   nameAccent: '',
   /** Small mono label above the name. */
-  tag: 'Software Developer',
+  tag: 'React Native Developer | Software Engineer',
   /** Rotating words in the hero sub-line. Keep them short. */
-  roles: ['UI/UX', 'Web Development', 'Mobile Development', 'Analysis', 'Prompting'],
+  roles: ['React Native', 'iOS & Android', 'State Management', 'API Integration', 'System Design'],
   /** One sentence. This is the hook. */
-  headline: 'I build interfaces that feel like they have weight, memory, and a pulse.',
-  location: 'Earth',
-  availability: 'Open to select projects — 2026',
-  email: 'ruwaid234@gmail.com',
+  headline: 'I build scalable, high-performance cross-platform mobile applications for Android and iOS.',
+  location: 'Chennai, India',
+  availability: 'Open to select opportunities — 2026',
+  email: 'dhanush8939s@gmail.com',
   resumeUrl: '#',
   /** Browser tab title and the meta description search engines show. */
-  pageTitle: 'Ruwaid — Software Developer',
+  pageTitle: 'Dhanush Kumar S — Portfolio',
   pageDescription:
-    'Software developer — UI/UX, web and mobile development, analysis, and prompting.',
+    'React Native Developer & Software Engineer with 4+ years of experience building scalable, high-performance cross-platform mobile applications.',
 }
 
 export type Project = {
@@ -47,199 +47,131 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    isPackage: true,
+    isPackage: false,
     isFlutterPackage: false,
-    title: 'React Status Tracker',
-    year: '2026',
-    role: 'Creator & Open Source Maintainer',
+    title: 'Ajman One',
+    year: '2025 – Present',
+    role: 'React Native Developer & System Designer',
     blurb:
-      'Engineered a reusable React UI library for visualizing multi-step workflows and progress states. Focused on performance, accessibility, developer experience, and composability, enabling teams to integrate production-ready status tracking with minimal effort.',
-    stack: ['React', 'TypeScript', 'npm', 'Rollup', 'CSS Modules'],
+      'Contributed to the development of 50+ digital services for Ajman Ports & Customs within Ajman One (government mobile app). Integrated HAJT E-Payment Gateway and architected config-driven component layouts using the Strategy pattern.',
+    stack: ['React Native', 'System Design', 'Custom Hooks', 'Axios', 'E-Payment Gateway'],
     image: '',
-    href: 'https://www.npmjs.com/package/react-status-tracker',
+    href: '#',
     hue: 205,
   },
   {
     isPackage: false,
     isFlutterPackage: false,
-    title: 'MyExpense',
-    year: '2026',
-    role: 'Full-Stack Mobile Developer',
+    title: 'RapidHR',
+    year: '2022 – Present',
+    role: 'React Native Developer',
     blurb:
-      'Designed and developed a cross-platform finance management application featuring expense tracking, investment management, budgeting, and financial insights. Focused on performance, intuitive user experience, and maintainable architecture to deliver a seamless personal finance solution.',
-    stack: [
-      'Flutter',
-      'Dart',
-      'SQLite',
-      'Firebase',
-      'Material Design',
-    ],
+      'Developed a comprehensive HR platform for workforce management. Engineered an offline-first synchronization layer using AsyncStorage with FIFO queuing, plus features like shift rostering, geo-tracking/geo-fencing, and Microsoft SSO.',
+    stack: ['React Native', 'Firebase', 'Native Modules', 'AsyncStorage', 'SignalR', 'SSO'],
     image: '',
     href: '#',
     hue: 145,
   },
   {
-    isPackage: true,
+    isPackage: false,
     isFlutterPackage: false,
-    title: 'React Status Pill',
-    year: '2026',
-    role: 'Creator & Open Source Maintainer',
+    title: 'RapidATS',
+    year: '2024 – 2025',
+    role: 'React Native Developer',
     blurb:
-      'Built and published a lightweight React component library for rendering customizable status badges and pills. Designed with TypeScript-first APIs, flexible theming, accessibility, and seamless integration into modern React applications.',
-    stack: ['React', 'TypeScript', 'npm', 'Rollup', 'CSS Modules'],
+      'Built a scalable Applicant Tracking System to streamline recruitment. Integrated AI-based resume parsing, skill extraction, custom interview pipelines, role-based access control (RBAC), and dashboards for recruitment analytics.',
+    stack: ['React Native', 'TypeScript', 'REST APIs', 'RBAC', 'AI Integration'],
     image: '',
-    href: 'https://www.npmjs.com/package/react-status-pill',
+    href: '#',
     hue: 360,
   },
   {
-    isPackage: true,
+    isPackage: false,
     isFlutterPackage: false,
-    title: 'GlassGallery',
-    year: '2026',
-    role: 'Creator & Open Source Maintainer',
+    title: 'Erada HRMS',
+    year: '2025 – Present',
+    role: 'React Native Developer',
     blurb:
-      'Built and published a glassmorphic React component library for rendering frosted-glass image galleries and carousels. Ships an Apple-style finish with backdrop blur and saturation, responsive grid and carousel modes, progress-pill indicators, flexible theming via CSS variables, accessibility, and zero runtime dependencies.',
-    stack: ['React', 'TypeScript', 'npm', 'Vite', 'CSS'],
+      'Customized and deployed the RapidHR platform for Erada Center for Treatment and Rehabilitation (UAE), tailoring business workflows and UI components to meet specific healthcare regulatory requirements.',
+    stack: ['React Native', 'REST API', 'UI Customization', 'Performance Optimization'],
     image: '',
-    href: 'https://www.npmjs.com/package/glass-gallery',
+    href: '#',
     hue: 260,
   },
-  {
-    isPackage: true,
-    isFlutterPackage: false,
-    title: 'react-request-logger',
-    year: '2026',
-    role: 'Creator & Open Source Maintainer',
-    blurb:
-      'Built and published a zero-dependency HTTP request logger for fetch and axios. Auto-logs method, url, status, request/response bodies and duration with secret redaction and body truncation. Streams entries to any database through a batched sink with retry and exponential backoff, ships ready-made MySQL, Postgres, HTTP and JSONL adapters with auto schema, exports to CSV/Excel, and includes an optional React <RequestLog> component with toolbar, card/table views, pagination and a detail modal.',
-    stack: ['TypeScript', 'React', 'Vite', 'npm', 'CSS'],
-    image: '',
-    href: 'https://www.npmjs.com/package/react-request-logger',
-    hue: 210,
-  },
-  {
-    isPackage: true,
-    isFlutterPackage: false,
-    title: 'voice-nav-react',
-    year: '2026',
-    role: 'Creator & Open Source Maintainer',
-    blurb:
-      'Built and published a zero-dependency React component for voice navigation on the web. Speaks an elements accessible name to click, focus, or jump to it using the Web Speech API with graceful fallback. Matches names exactly how screen readers compute them (aria-label, aria-labelledby, labels, alt, title) with fuzzy matching, supports whole-page navigation, dictation into text fields, edit commands (clear, delete word, backspace, undo), ordinal selection ("click the second button"), scroll control, browser history, light/dark theming, and a floating live-transcript toggle bar.',
-    stack: ['TypeScript', 'React', 'Vite', 'npm', 'CSS'],
-    image: '',
-    href: 'https://www.npmjs.com/package/voice-nav-react',
-    hue: 320,
-  },
-  {
-    isPackage: true,
-    isFlutterPackage: true,
-    title: 'carousel-banner',
-    year: '2026',
-    role: 'Creator & Open Source Maintainer',
-    blurb:
-      'Built and published a zero-dependency Flutter banner carousel on pub.dev. Infinitely looping slides, each with a color or image background and a mandatory title and subtitle anchored to the bottom over a gradient scrim. Autoplay with live progress in the active dot, swipe + dot navigation, optional tap callback, and a pluggable overlay between the text and background — all in a single file with no runtime dependencies.',
-    stack: ['Dart', 'Flutter', 'pub.dev', 'Widget'],
-    image: '',
-    href: 'https://pub.dev/packages/carousel_banner',
-    hue: 230,
-  },
 ]
-
-
-var PackageCount = projects.filter(project => project.isPackage).length;
-var FlutterPackageCount = projects.filter(project => project.isFlutterPackage).length;
-var ProjectCount = projects.filter(project => !project.isPackage && !project.isFlutterPackage).length;
 
 export const about = {
   eyebrow: 'About',
   title: 'Engineering, but with taste.',
   body: [
-    'I sit in the seam between design and engineering — close enough to the pixels to argue about easing curves, close enough to the metal to write the shader that draws them.',
-    'For the last few years I have shipped production software for enterprise platforms, then gone home and written render loops for fun. This site is the second thing pretending to be the first.',
+    'I am a React Native Developer & Software Engineer based in Chennai, India, with a passion for crafting fluid, native-quality user interfaces for both Android and iOS platforms.',
+    'Over the last 4+ years, I have architected and delivered enterprise-grade HRMS, ATS, and Government applications—focusing on scalable component architectures, secure auth systems, and offline-first data synchronization.',
   ],
   /** Numbers that scroll-count up. */
   stats: [
-    { value: PackageCount, suffix: '', label: 'NPM packages' },
-    { value: FlutterPackageCount, suffix: '', label: 'Flutter packages' },
-    { value: ProjectCount, suffix: '', label: 'Projects worked on' },
-    { value: 2, suffix: '+', label: 'Experience' },
+    { value: 4, suffix: '+', label: 'Years of Experience' },
+    { value: 4, suffix: '', label: 'Major Projects' },
+    { value: 50, suffix: '+', label: 'Digital Services Dev' },
+    { value: 2, suffix: '', label: 'Platforms (iOS/Android)' },
   ],
 }
 
-
 export const skills = [
   {
-    group: 'Frontend',
+    group: 'Languages & Frameworks',
     items: [
-      'React',
       'TypeScript',
-      'Angular',
-      'Flutter',
-      'Material UI',
-      'PrimeNG',
+      'JavaScript (ES6+)',
+      'React Native',
+      'React Hooks',
+      'Redux',
     ],
   },
   {
-    group: 'Backend',
+    group: 'Architecture & State',
     items: [
-      'Python',
-      'Django',
-      'Django REST Framework',
-      'Node.js',
-      'REST APIs',
-      'JWT Authentication',
+      'Component-based Architecture',
+      'Context API',
+      'Custom Hooks',
+      'State Management',
     ],
   },
   {
-    group: 'Database & Cloud',
+    group: 'APIs & Realtime',
     items: [
-      'PostgreSQL',
-      'MySQL',
-      'Docker',
-      'Git',
-      'GitHub',
-      'Multi-Tenant Architecture',
+      'REST API Integration',
+      'Axios & Interceptors',
+      'Firebase',
+      'SignalR',
+      'WebSockets',
     ],
   },
   {
-    group: 'Tools & Platforms',
+    group: 'Mobile & Developer Tools',
     items: [
-      'Mendix',
-      'Jenkins',
-      'npm',
-      'Android Studio',
-      'VS Code',
-      'CI/CD',
-      'Vercel',
-      'Claude',
-
-
+      'Android Development',
+      'Native Modules & Bridge',
+      'Push Notifications',
+      'JWT / Role-Based Access Control',
+      'VS Code / Xcode / Android Studio',
+      'Postman / Git',
     ],
   },
 ]
 
 /** Words that scroll sideways between sections. */
 export const marquee = [
-  'Building Digital Experiences',
-  'Micro Animations',
-  'Accessibility',
-  'Open Source',
-  'Automation',
-  // 'Developer Experience',
-  'Performance',
-  'System Design',
-  'Scalable Architecture',
-  'API Design',
-  'Responsive UI',
-  'Motion Design',
-  'Modern Web',
+  'React Native',
+  'iOS & Android',
   'Cross-Platform',
-  'UI/UX',
-  'Web Development',
-  'Mobile Development',
-  'Analysis',
-  'Prompting',
-  'Hosting & Deployment',
+  'Mobile Architecture',
+  'Performance Optimization',
+  'Offline-First Sync',
+  'API Integration',
+  'Realtime Apps',
+  'Custom Native Modules',
+  'State Management',
+  'Interactive UI',
 ]
 
 export type Experience = {
@@ -253,61 +185,28 @@ export const experience: Experience[] = [
   {
     company: 'RapidData Technologies',
     role: 'Software Engineer',
-    period: '2023 — Present',
+    period: 'Jul 2022 — Present',
     detail:
-      'Develop enterprise-grade applications using Mendix and modern web technologies. Delivered scalable solutions for government and enterprise clients by integrating REST/OData services, optimizing business workflows, and building reusable components with a strong focus on performance, maintainability, and user experience.',
+      'Architect and build high-performance, cross-platform React Native applications for iOS and Android. Design responsive interfaces, integrate secure REST APIs with custom Axios interceptors, implement custom native modules, and deliver production-ready HRMS, ATS, and government applications.',
   },
   {
-    company: 'Open Source',
-    role: 'Creator & Maintainer',
-    period: '2026 — Present',
+    company: 'Dhanalakshmi Srinivasan College of Engineering & Technology',
+    role: 'Bachelor of Engineering in Computer Science',
+    period: 'Aug 2017 — Sep 2021',
     detail:
-      'Published and maintain React Status Tracker, an open-source npm package for building customizable workflow and progress tracking interfaces. Focused on developer experience, accessibility, reusable APIs, and modern TypeScript practices.',
+      'Completed a Bachelor of Engineering degree in Computer Science, building solid fundamentals in software engineering, data structures, and algorithms.',
   },
-  {
-    company: 'Independent Projects',
-    role: 'Full-Stack Developer',
-    period: '2024 — Present',
-    detail:
-      'Designed and developed full-stack web and mobile applications, including multi-tenant SaaS platforms, Flutter applications, and developer tooling. Experienced across React, Django, PostgreSQL, TypeScript, and REST API architecture.',
-  },
-  {
-    company: 'Independent QA Projects',
-    role: 'QA Tester & App/Game Tester',
-    period: '2026 — Present',
-    detail:
-      'Independently tested mobile apps and games for developers, performing exploratory, functional, UI/UX, and regression testing. Identified and documented bugs with clear reproduction steps, severity, screenshots, and actionable feedback while collaborating directly with developers through independent testing projects.',
-  },
-
 ]
 
 export const socials = [
   {
-    label: 'Instagram - UIUX',
-    href: 'https://www.instagram.com/designexperiencewithme/'
-  },
-  {
     label: 'GitHub',
-    href: 'https://github.com/I-ruwaid-I',
+    href: 'https://github.com',
   },
   {
     label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/mohamed-ruwaid/  ', // Update later
+    href: 'https://linkedin.com',
   },
-  {
-    label: 'IEEE Xplore',
-    href: 'https://ieeexplore.ieee.org/document/11041000',
-  },
-  {
-    label: 'npm',
-    href: 'https://www.npmjs.com/~thedeadkind',
-  },
-  {
-    label: 'pub.dev [Flutter packages]',
-    href: 'https://pub.dev/publishers/ruwaid.in/packages',
-  }
-
-
 ]
 
 export type Photo = {

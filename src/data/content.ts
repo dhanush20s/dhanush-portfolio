@@ -33,9 +33,9 @@ export const person = {
     'Hiring for a React Native or full-stack role, or need a product built end to end — from API to app store? My inbox is open.',
   resumeUrl: '/Dhanush_Kumar_RN.pdf',
   /** Browser tab title and the meta description search engines show. */
-  pageTitle: 'Dhanush — Full-Stack & React Native Developer',
+  pageTitle: 'Dhanush — Mobile Application Developer (React Native)',
   pageDescription:
-    'React Native Developer & Software Engineer with 4+ years of experience building scalable Android and iOS apps for HRMS, ATS and government platforms.',
+    'Mobile application developer with 4+ years building reliable React Native apps for Android and iOS — HRMS, recruitment and government platforms. Open for mobile application development.',
 }
 
 export type Project = {

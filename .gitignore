@@ -6,3 +6,5 @@ shots
 # Test output
 e2e-shots/
 shots/
+
+.vercel

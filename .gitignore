@@ -2,3 +2,7 @@ node_modules
 dist
 shots
 .vite
+
+# Test output
+e2e-shots/
+shots/

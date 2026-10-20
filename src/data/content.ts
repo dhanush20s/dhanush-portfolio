@@ -1,45 +1,51 @@
 /* ============================================================================
-   YOUR DETAILS LIVE HERE.
-   This is the only file you need to edit to make the site yours.
-   Everything below is placeholder content — swap the strings and you're done.
+   ALL PORTFOLIO CONTENT LIVES HERE.
+   Sections read from this file, so most updates are string edits.
    ========================================================================== */
 
 export const person = {
-  /** Small mark in the top-left of the nav, and the browser tab title. */
+  /** Small mark in the top-left of the nav. */
   wordmark: 'Dhanush',
   /** Shown huge on the hero, uppercase. */
   name: 'Dhanush',
-  /**
-   * Optional second word, rendered in the gradient italic serif beside the
-   * name — a surname works best. Leave '' for a single-word hero.
-   */
+  /** Rendered in the gradient italic serif beside the name. */
   nameAccent: '',
   /** Small mono label above the name. */
-  tag: 'React Native Developer | Software Engineer',
+  tag: 'Full-Stack Developer',
   /** Rotating words in the hero sub-line. Keep them short. */
-  roles: ['React Native', 'iOS & Android', 'State Management', 'API Integration', 'System Design'],
+  roles: ['React Native', 'iOS & Android', 'Offline-First Sync', 'Real-time Apps', 'System Design'],
   /** One sentence. This is the hook. */
-  headline: 'I build scalable, high-performance cross-platform mobile applications for Android and iOS.',
+  headline:
+    'I build offline-first, real-time React Native apps for 1,000+ users across HRMS, ATS and government platforms.',
+  /** Small chips under the hero headline. */
+  stack: ['React Native', 'React', 'Next.js', 'Node.js', 'Express', 'Supabase'],
   location: 'Chennai, India',
-  availability: 'Open to select opportunities — 2026',
+  availability: 'Available for new roles — React Native / Full-stack',
   email: 'dhanush8939s@gmail.com',
-  resumeUrl: '#',
+  phone: '+91 91235 03662',
+  phoneHref: 'tel:+919123503662',
+  status: 'Open to new roles & freelance projects — 2026',
+  timezone: 'IST [UTC+5:30]',
+  contactPitch:
+    'Hiring for a React Native or full-stack role, or need a product built end to end — from API to app store? My inbox is open.',
+  resumeUrl: '/Dhanush_Kumar_RN.pdf',
   /** Browser tab title and the meta description search engines show. */
-  pageTitle: 'Dhanush Kumar S — Portfolio',
+  pageTitle: 'Dhanush — Full-Stack & React Native Developer',
   pageDescription:
-    'React Native Developer & Software Engineer with 4+ years of experience building scalable, high-performance cross-platform mobile applications.',
+    'React Native Developer & Software Engineer with 4+ years of experience building scalable Android and iOS apps for HRMS, ATS and government platforms.',
 }
 
 export type Project = {
-  isPackage?: boolean
-  isFlutterPackage?: boolean
   title: string
+  /** 'freelance' = live client sites; 'professional' = shipped at RapidData. */
+  category: 'freelance' | 'professional'
   year: string
   role: string
   blurb: string
   stack: string[]
-  /** Any image URL or local path in /public. Leave '' for a generated gradient. */
+  /** Local path in /public or a URL. Leave '' for no thumbnail. */
   image: string
+  /** Live site URL. Leave '' for projects with no public link. */
   href: string
   /** Accent hue in degrees (0–360) — drives the card's glow. */
   hue: number
@@ -47,56 +53,76 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    isPackage: false,
-    isFlutterPackage: false,
+    title: 'Elite Startup School',
+    category: 'freelance',
+    year: '2026 – Present',
+    role: 'Team Lead & Full-Stack Developer',
+    blurb:
+      'Full-stack platform for a Chennai entrepreneurship school: a Next.js 14 site (programs, campus, events, blog, funding-pitch and admissions forms) with an admin dashboard, backed by a TypeScript Express REST API on Supabase — JWT auth, Zod validation, rate limiting, CSV export and Swagger docs.',
+    stack: ['Next.js 14', 'React', 'TypeScript', 'Tailwind', 'Express.js', 'Supabase', 'JWT', 'Zod'],
+    image: '',
+    href: 'https://www.elitestartupschool.com/',
+    hue: 28,
+  },
+  {
+    title: 'TiruVeedu',
+    category: 'freelance',
+    year: '2026 – Present',
+    role: 'Team Lead & Full-Stack Developer',
+    blurb:
+      'Local directory for Tiruvannamalai with 600+ listings across stays, transport, restaurants and services. A bilingual (English + Tamil) installable React app on Supabase — Postgres with row-level security, edge functions, map-based listings, admin tools and OTP sign-in — deployed on Netlify.',
+    stack: ['React', 'TypeScript', 'Vite', 'Tailwind', 'Supabase', 'Edge Functions', 'Leaflet', 'Netlify'],
+    image: '',
+    href: 'https://tiruveedu.com/',
+    hue: 262,
+  },
+  {
     title: 'Ajman One',
+    category: 'professional',
     year: '2025 – Present',
     role: 'React Native Developer & System Designer',
     blurb:
-      'Contributed to the development of 50+ digital services for Ajman Ports & Customs within Ajman One (government mobile app). Integrated HAJT E-Payment Gateway and architected config-driven component layouts using the Strategy pattern.',
-    stack: ['React Native', 'System Design', 'Custom Hooks', 'Axios', 'E-Payment Gateway'],
+      'Delivered 50+ digital services for Ajman Ports & Customs inside the Ajman One government app. Integrated the HAJT E-Payment Gateway and designed a config-driven UI (Strategy pattern) plus a payment workflow built on a custom hook, Facade, state machine and Builder pattern.',
+    stack: ['React Native', 'System Design', 'Strategy', 'Facade', 'State Machine', 'Axios'],
     image: '',
-    href: '#',
+    href: '',
     hue: 205,
   },
   {
-    isPackage: false,
-    isFlutterPackage: false,
     title: 'RapidHR',
-    year: '2022 – Present',
+    category: 'professional',
+    year: 'Nov 2022 – Present',
     role: 'React Native Developer',
     blurb:
-      'Developed a comprehensive HR platform for workforce management. Engineered an offline-first synchronization layer using AsyncStorage with FIFO queuing, plus features like shift rostering, geo-tracking/geo-fencing, and Microsoft SSO.',
-    stack: ['React Native', 'Firebase', 'Native Modules', 'AsyncStorage', 'SignalR', 'SSO'],
+      'Enterprise HR platform for attendance, approvals, shift rostering, LMS, help desk and chat. Built an offline-first attendance sync (AsyncStorage + FIFO queue), geo-fencing via custom native modules, Microsoft SSO and multi-tenant client setup.',
+    stack: ['React Native', 'Firebase', 'Native Modules', 'SignalR', 'Microsoft SSO'],
     image: '',
-    href: '#',
+    href: '',
     hue: 145,
   },
   {
-    isPackage: false,
-    isFlutterPackage: false,
     title: 'RapidATS',
+    category: 'professional',
     year: '2024 – 2025',
     role: 'React Native Developer',
     blurb:
-      'Built a scalable Applicant Tracking System to streamline recruitment. Integrated AI-based resume parsing, skill extraction, custom interview pipelines, role-based access control (RBAC), and dashboards for recruitment analytics.',
+      'Applicant tracking system covering job posting, interview pipelines, offer letters and a candidate portal. Added AI resume parsing and skill extraction, role-based access control and hiring-funnel dashboards.',
     stack: ['React Native', 'TypeScript', 'REST APIs', 'RBAC', 'AI Integration'],
     image: '',
-    href: '#',
-    hue: 360,
+    href: '',
+    hue: 350,
   },
   {
-    isPackage: false,
-    isFlutterPackage: false,
     title: 'Erada HRMS',
+    category: 'professional',
     year: '2025 – Present',
     role: 'React Native Developer',
     blurb:
-      'Customized and deployed the RapidHR platform for Erada Center for Treatment and Rehabilitation (UAE), tailoring business workflows and UI components to meet specific healthcare regulatory requirements.',
-    stack: ['React Native', 'REST API', 'UI Customization', 'Performance Optimization'],
+      'Customised and deployed RapidHR for the Erada Center for Treatment and Rehabilitation (UAE), adapting workflows and UI to healthcare requirements while keeping performance and stability.',
+    stack: ['React Native', 'REST API', 'UI Customisation', 'Performance'],
     image: '',
-    href: '#',
-    hue: 260,
+    href: '',
+    hue: 285,
   },
 ]
 
@@ -104,58 +130,83 @@ export const about = {
   eyebrow: 'About',
   title: 'Engineering, but with taste.',
   body: [
-    'I am a React Native Developer & Software Engineer based in Chennai, India, with a passion for crafting fluid, native-quality user interfaces for both Android and iOS platforms.',
-    'Over the last 4+ years, I have architected and delivered enterprise-grade HRMS, ATS, and Government applications—focusing on scalable component architectures, secure auth systems, and offline-first data synchronization.',
+    'I am a React Native developer in Chennai with 4+ years of building cross-platform apps that real teams rely on every day — HRMS, recruitment and government services on Android and iOS.',
+    'I care about the hard parts: offline-first sync that survives bad networks, native modules for geo-fencing, real-time updates, secure auth, and clean architecture (Strategy, Facade, State Machine, Builder) that keeps big codebases easy to change.',
+    'Alongside mobile, I now build full-stack: React and Next.js frontends with Express/Node.js and Supabase backends, shipped to production for freelance clients.',
   ],
   /** Numbers that scroll-count up. */
   stats: [
     { value: 4, suffix: '+', label: 'Years of Experience' },
-    { value: 4, suffix: '', label: 'Major Projects' },
-    { value: 50, suffix: '+', label: 'Digital Services Dev' },
-    { value: 2, suffix: '', label: 'Platforms (iOS/Android)' },
+    { value: 1000, suffix: '+', label: 'Users Served' },
+    { value: 10, suffix: '+', label: 'Client Organisations' },
+    { value: 2, suffix: '', label: 'Live Products Led' },
+  ],
+  /** Quick status rows under the stats. */
+  now: [
+    { label: 'Now', value: 'Leading two live products as team lead' },
+    { label: 'Learning', value: 'Node.js, Next.js and AI / LLM apps' },
+    { label: 'Open to', value: 'React Native · Full-stack · Team lead roles' },
+  ],
+  /** What a recruiter or client gets. */
+  pillars: [
+    {
+      title: 'Ship reliably',
+      text: 'Offline-first sync and real-time updates that keep working on bad networks, proven with 1,000+ users.',
+    },
+    {
+      title: 'Build to scale',
+      text: 'Clean architecture (Strategy, Facade, State Machine) so a growing codebase stays easy to change.',
+    },
+    {
+      title: 'Own it end to end',
+      text: 'API, database, mobile and web. I lead delivery from the first sketch to the production release.',
+    },
   ],
 }
 
-export const skills = [
+export type Capability = {
+  title: string
+  blurb: string
+  /** Three short words shown top-right of the card. */
+  tagline: [string, string, string]
+  icon: 'mobile' | 'server' | 'cloud' | 'layers'
+  /** Accent hue in degrees (0-360). */
+  hue: number
+  items: string[]
+}
+
+export const capabilities: Capability[] = [
   {
-    group: 'Languages & Frameworks',
-    items: [
-      'TypeScript',
-      'JavaScript (ES6+)',
-      'React Native',
-      'React Hooks',
-      'Redux',
-    ],
+    title: 'Mobile & Frontend',
+    blurb: 'Fast, native-feeling apps and responsive web interfaces.',
+    tagline: ['Build', 'Beautiful', 'Interfaces'],
+    icon: 'mobile',
+    hue: 190,
+    items: ['React Native (Android & iOS)', 'Expo', 'Native Modules & Bridge', 'Push Notifications', 'React & Next.js', 'TypeScript', 'Redux / Context API', 'Tailwind CSS'],
   },
   {
-    group: 'Architecture & State',
-    items: [
-      'Component-based Architecture',
-      'Context API',
-      'Custom Hooks',
-      'State Management',
-    ],
+    title: 'Backend & APIs',
+    blurb: 'Secure, documented APIs and real-time services.',
+    tagline: ['Build', 'Scalable', 'Systems'],
+    icon: 'server',
+    hue: 250,
+    items: ['Node.js', 'Express.js', 'REST APIs', 'Axios & Interceptors', 'JWT & RBAC', 'Microsoft SSO', 'SignalR / WebSockets', 'Zod & Swagger'],
   },
   {
-    group: 'APIs & Realtime',
-    items: [
-      'REST API Integration',
-      'Axios & Interceptors',
-      'Firebase',
-      'SignalR',
-      'WebSockets',
-    ],
+    title: 'Data & Cloud',
+    blurb: 'Reliable data, auth and storage, shipped to production.',
+    tagline: ['Store', 'Sync', 'Deploy'],
+    icon: 'cloud',
+    hue: 160,
+    items: ['Supabase / PostgreSQL', 'Firebase', 'Edge Functions', 'Offline-first sync', 'Vercel & Netlify', 'Google Play Console'],
   },
   {
-    group: 'Mobile & Developer Tools',
-    items: [
-      'Android Development',
-      'Native Modules & Bridge',
-      'Push Notifications',
-      'JWT / Role-Based Access Control',
-      'VS Code / Xcode / Android Studio',
-      'Postman / Git',
-    ],
+    title: 'Architecture & Tools',
+    blurb: 'Patterns that keep big codebases easy to change.',
+    tagline: ['Design', 'Test', 'Ship'],
+    icon: 'layers',
+    hue: 300,
+    items: ['Strategy / Facade / Builder', 'State machines', 'Custom hooks & reusable components', 'List & network optimisation', 'Git & Postman', 'Android Studio & Xcode', 'VS Code & Mendix'],
   },
 ]
 
@@ -163,15 +214,14 @@ export const skills = [
 export const marquee = [
   'React Native',
   'iOS & Android',
-  'Cross-Platform',
-  'Mobile Architecture',
-  'Performance Optimization',
   'Offline-First Sync',
-  'API Integration',
-  'Realtime Apps',
+  'Geo-Fencing',
+  'Real-time Apps',
+  'Microsoft SSO',
   'Custom Native Modules',
-  'State Management',
-  'Interactive UI',
+  'State Machines',
+  'Design Patterns',
+  'Performance Optimisation',
 ]
 
 export type Experience = {
@@ -179,55 +229,51 @@ export type Experience = {
   role: string
   period: string
   detail: string
+  kind?: 'work' | 'education' | 'freelance'
 }
 
 export const experience: Experience[] = [
   {
-    company: 'RapidData Technologies',
-    role: 'Software Engineer',
-    period: 'Jul 2022 — Present',
+    company: 'Freelance',
+    role: 'Team Lead & Full-Stack Developer — Elite Startup School & TiruVeedu',
+    period: '2026 — Present',
     detail:
-      'Architect and build high-performance, cross-platform React Native applications for iOS and Android. Design responsive interfaces, integrate secure REST APIs with custom Axios interceptors, implement custom native modules, and deliver production-ready HRMS, ATS, and government applications.',
+      'Building live full-stack products with React/Next.js frontends, an Express + Supabase REST API and Supabase edge functions, shipped to Vercel and Netlify for an entrepreneurship school in Chennai and a Tiruvannamalai local-services directory.',
+    kind: 'freelance',
+  },
+  {
+    company: 'RapidData Technologies',
+    role: 'Software Engineer · Chennai',
+    period: 'Jul 2022 — Sep 2026',
+    detail:
+      'Owned React Native features end to end — API integration, testing and production release — across HRMS, ATS and government apps. Built reusable components and custom hooks, offline-first sync, geo-fencing, real-time chat, Microsoft SSO and RBAC, and tuned performance on Android and iOS for 1,000+ users across 10+ client organisations.',
+    kind: 'work',
+  },
+  {
+    company: 'Kovaion Consulting',
+    role: 'Full Stack Developer (Internship) · Chennai',
+    period: 'Jan 2022 — May 2022',
+    detail:
+      'Five-month full-stack internship working with JavaScript and Firebase — my first professional step before moving into React Native at RapidData.',
+    kind: 'work',
   },
   {
     company: 'Dhanalakshmi Srinivasan College of Engineering & Technology',
-    role: 'Bachelor of Engineering in Computer Science',
+    role: 'B.E. Computer Science · Chennai',
     period: 'Aug 2017 — Sep 2021',
     detail:
-      'Completed a Bachelor of Engineering degree in Computer Science, building solid fundamentals in software engineering, data structures, and algorithms.',
+      'Web and mobile mini-projects built around real-world use cases, using version control, modular design and testing in team settings.',
+    kind: 'education',
   },
 ]
 
 export const socials = [
   {
     label: 'GitHub',
-    href: 'https://github.com',
+    href: 'https://github.com/dhanush20s',
   },
   {
     label: 'LinkedIn',
-    href: 'https://linkedin.com',
+    href: 'https://www.linkedin.com/in/dhanush-kumar-64a5a3227/',
   },
 ]
-
-export type Photo = {
-  src: string
-  caption: string
-  location: string
-  date: string
-  hue: number
-}
-
-export const photography = {
-  eyebrow: 'Way of Life',
-  title: 'Frames I have captured.',
-  body: 'A selection of photographs — moments, light, and composition through my lens.',
-  photos: [
-    {
-      src: '/assets/BNS.jpg',
-      caption: 'One fine day, I will capture the perfect sunset.',
-      location: 'CH,IN',
-      date: '2026',
-      hue: 285,
-    },
-  ] as Photo[],
-}

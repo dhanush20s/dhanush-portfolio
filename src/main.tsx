@@ -1,21 +1,14 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import { Layout } from './components/Layout'
 import App from './App'
-import PhotographyPage from './PhotographyPage'
 import './styles/global.css'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<App />} />
-          <Route path="/photography" element={<PhotographyPage />} />
-        </Routes>
-      </Layout>
-    </BrowserRouter>
+    <Layout>
+      <App />
+    </Layout>
   </StrictMode>,
 )

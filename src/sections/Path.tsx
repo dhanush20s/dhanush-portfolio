@@ -40,13 +40,13 @@ export function Path() {
   }, [])
 
   return (
-    <section className="section shell" id="path">
+    <section className="section shell" id="path" data-stage="3">
       <header className="section__head">
         <div>
           <span className="eyebrow">Path</span>
           <TextReveal text="Where I have been." as="h2" className="section__title" />
         </div>
-        <span className="section__index">03 / 04</span>
+        <span className="section__index">04 / 05</span>
       </header>
 
       <div className="timeline" ref={timeline}>
@@ -57,6 +57,11 @@ export function Path() {
             <article className="job" key={job.company + job.period}>
               <div className="job__period">{job.period}</div>
               <div>
+                {job.kind && (
+                  <span className="job__kind">
+                    {job.kind === 'education' ? 'Education' : job.kind === 'freelance' ? 'Freelance' : 'Experience'}
+                  </span>
+                )}
                 <h3 className="job__company">{job.company}</h3>
                 <div className="job__role">{job.role}</div>
                 <p className="job__detail">{job.detail}</p>

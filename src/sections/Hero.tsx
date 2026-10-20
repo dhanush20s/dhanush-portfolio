@@ -4,6 +4,7 @@ import gsap from 'gsap'
 import { person } from '../data/content'
 import { FadeIn, TextReveal } from '../components/Reveal'
 import { scene } from '../lib/store'
+import { scrollToId } from '../lib/scroll'
 
 /** Cycles the role words with a masked vertical slide. */
 function RoleCycler({ roles }: { roles: string[] }) {
@@ -47,14 +48,27 @@ function RoleCycler({ roles }: { roles: string[] }) {
   )
 }
 
-/**
- * The preloader owns the first ~2.4s. Hero animations are offset past it so the
- * reveal lands the moment the wipe clears, not underneath it.
- */
-const AFTER_PRELOADER = 2.3
+/** Small offset so the hero reveal starts just after first paint. */
+const AFTER_PRELOADER = 0.15
 
 export function Hero() {
   const accent = person.nameAccent.trim()
+
+  // On phones the scrim is lightened over the top of the hero so the particle
+  // shape shows through, then returns to full strength as the page scrolls.
+  useEffect(() => {
+    const root = document.documentElement
+    const update = () => {
+      const clear = Math.min(1, Math.max(0, 1 - window.scrollY / (window.innerHeight * 0.55)))
+      root.style.setProperty('--hero-clear', clear.toFixed(3))
+    }
+    update()
+    window.addEventListener('scroll', update, { passive: true })
+    return () => {
+      window.removeEventListener('scroll', update)
+      root.style.removeProperty('--hero-clear')
+    }
+  }, [])
 
   return (
     <section className="section hero shell" id="index" data-stage="0">
@@ -95,6 +109,23 @@ export function Hero() {
       <FadeIn className="hero__foot" delay={AFTER_PRELOADER + 0.45} y={26}>
         <div>
           <p className="hero__headline">{person.headline}</p>
+          <div className="hero__actions">
+            <button
+              className="hero__cta hero__cta--primary"
+              onClick={() => scrollToId('work')}
+              data-cursor="Work"
+            >
+              View my work
+            </button>
+            <a className="hero__cta" href={person.resumeUrl} download data-cursor="Download">
+              Resume ↓
+            </a>
+          </div>
+          <ul className="hero__stack">
+            {person.stack.map((tech) => (
+              <li key={tech}>{tech}</li>
+            ))}
+          </ul>
           <div className="hero__scroll">
             <span>Scroll</span>
             <span />

@@ -8,11 +8,10 @@ import { particleFrag, particleVert } from './shaders/particles.glsl'
 import {
   buildShapeTextures,
   debugMasks,
-  refineShapeTextures,
   seedPositions,
   shapeFillers,
 } from './shapes'
-import { maskToDataURL, subjectPreview } from './sampler'
+import { maskToDataURL } from './sampler'
 import { SIM_SIZE, qualityTier, scene } from '../lib/store'
 import { visuals } from '../data/visuals'
 
@@ -71,19 +70,10 @@ export function ParticleField() {
     return { gpu, posVar, velVar, shapes }
   }, [gl, SIZE])
 
-  // Webfont and photo sampling can't happen synchronously; these rewrite their
-  // textures in place once ready and the running simulation picks them up.
   useEffect(() => {
-    refineShapeTextures(sim.shapes, SIZE).catch(() => {})
-
     if (import.meta.env.DEV) {
       ;(window as unknown as Record<string, unknown>).__mask = (name: string) =>
         debugMasks[name] ? maskToDataURL(debugMasks[name]) : null
-      ;(window as unknown as Record<string, unknown>).__subject = (
-        src: string,
-        mode = visuals.carImageMode,
-        tol = visuals.carImageTolerance,
-      ) => subjectPreview(src, mode, tol)
 
       // Reads live particle positions back off the GPU. The only way to tell a
       // simulation that isn't converging from one that's converging on the
@@ -222,10 +212,12 @@ export function ParticleField() {
           // Cosine palette: col = A + B*cos(2π(C*t + D)).
           // A is kept well below 0.5 so overlapping additive points climb into
           // colour before they clip to white — a brighter base greys out fast.
-          uPalA: { value: new THREE.Vector3(0.34, 0.26, 0.44) },
-          uPalB: { value: new THREE.Vector3(0.42, 0.38, 0.46) },
-          uPalC: { value: new THREE.Vector3(1.0, 1.0, 1.0) },
-          uPalD: { value: new THREE.Vector3(0.08, 0.36, 0.68) },
+          // Tuned to a cyan → blue → violet range, with no warm hues, so the
+          // cloud reads as one cool "tech" palette.
+          uPalA: { value: new THREE.Vector3(0.22, 0.34, 0.62) },
+          uPalB: { value: new THREE.Vector3(0.24, 0.30, 0.38) },
+          uPalC: { value: new THREE.Vector3(0.6, 0.6, 0.6) },
+          uPalD: { value: new THREE.Vector3(0.62, 0.38, 0.0) },
         },
         transparent: true,
         depthWrite: false,
@@ -258,8 +250,7 @@ export function ParticleField() {
 
     /* shape blend */
     const maxIdx = shapeFillers.length - 1
-    const effectiveStage = scene.pinnedStage >= 0 ? scene.pinnedStage : scene.stage
-    const stage = THREE.MathUtils.clamp(effectiveStage, 0, maxIdx)
+    const stage = THREE.MathUtils.clamp(scene.stage, 0, maxIdx)
     const a = Math.min(Math.floor(stage), maxIdx)
     const b = Math.min(a + 1, maxIdx)
     const morphTarget = stage - a
@@ -297,8 +288,11 @@ export function ParticleField() {
       const wide = viewport.width / viewport.height > 1.15
       s.offsetX = damp(s.offsetX, wide ? visuals.offsetX : 0, 3, dt)
       group.current.position.x = s.offsetX
-      group.current.position.y = visuals.offsetY + scene.pointer.y * 0.35
-      group.current.scale.setScalar(wide ? 1 : 0.78)
+      group.current.position.y =
+        (wide ? visuals.offsetY : visuals.mobileOffsetY) + scene.pointer.y * 0.35
+      // On phones the hero atom is shrunk a little more so it clears the copy.
+      const heroShrink = 1 - 0.2 * (1 - THREE.MathUtils.clamp(stage, 0, 1))
+      group.current.scale.setScalar(wide ? 1 : visuals.mobileScale * heroShrink)
       group.current.updateMatrixWorld(true)
     }
 

@@ -50,9 +50,17 @@ varying float vSpeed;
 varying float vSeed;
 varying float vDepth;
 
-/** Iñigo Quílez cosine palette — cheap, and it stays iridescent at any t. */
+/**
+ * Three-stop cyan → blue → violet ramp. The cosine uniforms stay on the
+ * material for tuning, but the portfolio uses fixed stops so every particle
+ * lands on a saturated, on-brand colour instead of drifting through the rainbow.
+ */
 vec3 palette(float t) {
-  return uPalA + uPalB * cos(6.28318530718 * (uPalC * t + uPalD));
+  vec3 cyan   = vec3(0.10, 0.88, 1.00);
+  vec3 blue   = vec3(0.22, 0.46, 1.00);
+  vec3 violet = vec3(0.62, 0.36, 1.00);
+  float x = smoothstep(0.12, 0.67, t);
+  return x < 0.5 ? mix(cyan, blue, x * 2.0) : mix(blue, violet, (x - 0.5) * 2.0);
 }
 
 void main() {

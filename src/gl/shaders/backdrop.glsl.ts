@@ -40,8 +40,8 @@ void main() {
 
   // Hue drifts as you scroll — each section gets its own temperature.
   float hue = uStage * 0.22 + n2 * 0.10 + uTime * 0.006;
-  vec3 cool = vec3(0.05, 0.30, 0.42);
-  vec3 warm = vec3(0.38, 0.08, 0.30);
+  vec3 cool = vec3(0.03, 0.26, 0.46);   // deep cyan-blue
+  vec3 warm = vec3(0.24, 0.10, 0.46);   // violet
   vec3 tint = mix(cool, warm, 0.5 + 0.5 * sin(hue * 6.28318));
 
   vec3 col = vec3(0.010, 0.011, 0.024);          // near-black base

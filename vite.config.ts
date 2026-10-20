@@ -6,13 +6,8 @@ export default defineConfig({
   server: { port: 5273, open: true },
   build: {
     target: 'es2020',
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          three: ['three'],
-          r3f: ['@react-three/fiber', '@react-three/drei', '@react-three/postprocessing'],
-        },
-      },
-    },
+    // The WebGL scene is lazy-loaded (see Layout.tsx), so three.js lands in its
+    // own async chunk automatically — no manual chunking needed.
+    chunkSizeWarningLimit: 1000,
   },
 })

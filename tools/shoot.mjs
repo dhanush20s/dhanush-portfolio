@@ -51,7 +51,7 @@ await page.goto(URL, { waitUntil: 'networkidle' })
 await page.waitForTimeout(5200)
 
 // Dump the hand-drawn silhouettes so they can be inspected directly.
-for (const name of ['car', 'portrait', 'mountains']) {
+for (const name of ['code', 'growth', 'plane']) {
   const url = await page.evaluate((n) => window.__mask?.(n), name)
   if (url) {
     writeFileSync(path.join(OUT, `mask-${name}.png`), Buffer.from(url.split(',')[1], 'base64'))

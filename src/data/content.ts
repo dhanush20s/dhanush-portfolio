@@ -27,7 +27,7 @@ export const person = {
   email: 'dhanush8939s@gmail.com',
   phone: '+91 91235 03662',
   phoneHref: 'tel:+919123503662',
-  status: 'Open to new roles & freelance projects — 2026',
+  status: 'Open to new roles & independent projects — 2026',
   timezone: 'IST [UTC+5:30]',
   contactPitch:
     'Hiring for a React Native or full-stack role, or need a product built end to end — from API to app store? My inbox is open.',
@@ -40,8 +40,8 @@ export const person = {
 
 export type Project = {
   title: string
-  /** 'freelance' = live client sites; 'professional' = shipped at RapidData. */
-  category: 'freelance' | 'professional'
+  /** 'independent' = live client sites; 'professional' = shipped at RapidData. */
+  category: 'independent' | 'professional'
   year: string
   role: string
   blurb: string
@@ -57,7 +57,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     title: 'Elite Startup School',
-    category: 'freelance',
+    category: 'independent',
     year: '2026 – Present',
     role: 'Team Lead & Full-Stack Developer',
     blurb:
@@ -69,7 +69,7 @@ export const projects: Project[] = [
   },
   {
     title: 'TiruVeedu',
-    category: 'freelance',
+    category: 'independent',
     year: '2026 – Present',
     role: 'Team Lead & Full-Stack Developer',
     blurb:
@@ -232,17 +232,17 @@ export type Experience = {
   role: string
   period: string
   detail: string
-  kind?: 'work' | 'education' | 'freelance'
+  kind?: 'work' | 'education' | 'independent'
 }
 
 export const experience: Experience[] = [
   {
-    company: 'Freelance',
+    company: 'Independent Projects',
     role: 'Team Lead & Full-Stack Developer — Elite Startup School & TiruVeedu',
     period: '2026 — Present',
     detail:
       'Building live full-stack products with React/Next.js frontends, an Express + Supabase REST API and Supabase edge functions, shipped to Vercel and Netlify for an entrepreneurship school in Chennai and a Tiruvannamalai local-services directory.',
-    kind: 'freelance',
+    kind: 'independent',
   },
   {
     company: 'RapidData Technologies',

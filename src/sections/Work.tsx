@@ -7,12 +7,12 @@ type Filter = 'all' | Project['category']
 
 const FILTERS: { id: Filter; label: string }[] = [
   { id: 'all', label: 'All projects' },
-  { id: 'freelance', label: 'Freelance · live' },
+  { id: 'independent', label: 'Independent · live' },
   { id: 'professional', label: 'Professional' },
 ]
 
 const KIND_LABEL: Record<Project['category'], string> = {
-  freelance: 'Production system',
+  independent: 'Production system',
   professional: 'Enterprise app',
 }
 

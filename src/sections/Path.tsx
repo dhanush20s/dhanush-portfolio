@@ -59,7 +59,7 @@ export function Path() {
               <div>
                 {job.kind && (
                   <span className="job__kind">
-                    {job.kind === 'education' ? 'Education' : job.kind === 'freelance' ? 'Freelance' : 'Experience'}
+                    {job.kind === 'education' ? 'Education' : job.kind === 'independent' ? 'Independent' : 'Experience'}
                   </span>
                 )}
                 <h3 className="job__company">{job.company}</h3>

@@ -3,6 +3,11 @@ import { Counter } from '../components/Counter'
 import { Marquee } from '../components/Marquee'
 import { FadeIn, TextReveal } from '../components/Reveal'
 
+/** Renders **marked** phrases as <strong> so key skills can be highlighted from the data file. */
+function rich(text: string) {
+  return text.split('**').map((part, i) => (i % 2 ? <strong key={i}>{part}</strong> : part))
+}
+
 export function About() {
   return (
     <>
@@ -18,7 +23,7 @@ export function About() {
         <div className="about__grid">
           <FadeIn className="about__body" stagger={0.12}>
             {about.body.map((para, i) => (
-              <p key={i}>{para}</p>
+              <p key={i}>{rich(para)}</p>
             ))}
           </FadeIn>
 

@@ -11,16 +11,19 @@ export const person = {
   /** Rendered in the gradient italic serif beside the name. */
   nameAccent: '',
   /** Small mono label above the name. */
-  tag: 'Full-Stack Developer',
+  tag: 'Mobile Application Developer',
   /** Rotating words in the hero sub-line. Keep them short. */
-  roles: ['React Native', 'iOS & Android', 'Offline-First Sync', 'Real-time Apps', 'System Design'],
+  roles: ['React Native', 'iOS & Android', 'Real-time Apps', 'Native Modules', 'System Design'],
   /** One sentence. This is the hook. */
   headline:
-    'I build offline-first, real-time React Native apps for 1,000+ users across HRMS, ATS and government platforms.',
+    'I build interfaces that feel like they have weight, memory, and a pulse.',
+  /** Smaller supporting line under the headline. */
+  headlineSub:
+    'Fusing tactile motion design, clean software engineering, and production performance to deliver memorable digital experiences.',
   /** Small chips under the hero headline. */
-  stack: ['React Native', 'React', 'Next.js', 'Node.js', 'Express', 'Supabase'],
+  stack: ['React Native', 'iOS', 'Android', 'TypeScript', 'Firebase', 'Redux'],
   location: 'Chennai, India',
-  availability: 'Available for new roles — React Native / Full-stack',
+  availability: 'Open for mobile application development',
   email: 'dhanush8939s@gmail.com',
   phone: '+91 91235 03662',
   phoneHref: 'tel:+919123503662',
@@ -94,7 +97,7 @@ export const projects: Project[] = [
     year: 'Nov 2022 – Present',
     role: 'React Native Developer',
     blurb:
-      'Enterprise HR platform for attendance, approvals, shift rostering, LMS, help desk and chat. Built an offline-first attendance sync (AsyncStorage + FIFO queue), geo-fencing via custom native modules, Microsoft SSO and multi-tenant client setup.',
+      'Enterprise HR platform for attendance, approvals, shift rostering, LMS, help desk and chat. Built a resilient attendance sync (AsyncStorage + FIFO queue), geo-fencing via custom native modules, Microsoft SSO and multi-tenant client setup.',
     stack: ['React Native', 'Firebase', 'Native Modules', 'SignalR', 'Microsoft SSO'],
     image: '',
     href: '',
@@ -130,9 +133,9 @@ export const about = {
   eyebrow: 'About',
   title: 'Engineering, but with taste.',
   body: [
-    'I am a React Native developer in Chennai with 4+ years of building cross-platform apps that real teams rely on every day — HRMS, recruitment and government services on Android and iOS.',
-    'I care about the hard parts: offline-first sync that survives bad networks, native modules for geo-fencing, real-time updates, secure auth, and clean architecture (Strategy, Facade, State Machine, Builder) that keeps big codebases easy to change.',
-    'Alongside mobile, I now build full-stack: React and Next.js frontends with Express/Node.js and Supabase backends, shipped to production for freelance clients.',
+    'I engineer digital experiences with **precision, performance, and purpose.**',
+    'With 4+ years in **React Native**, I build reliable **Android and iOS** applications — from HRMS workflows that keep running on poor networks to government digital services. My focus is **scalable architecture**, **native integrations**, **real-time systems**, and seamless user experiences.',
+    'Beyond mobile, I build full-stack products with **React, Next.js, Node.js, and Supabase**, turning complex requirements into maintainable, production-ready software.',
   ],
   /** Numbers that scroll-count up. */
   stats: [
@@ -151,7 +154,7 @@ export const about = {
   pillars: [
     {
       title: 'Ship reliably',
-      text: 'Offline-first sync and real-time updates that keep working on bad networks, proven with 1,000+ users.',
+      text: 'Reliable data sync and real-time updates that keep working on bad networks, proven with 1,000+ users.',
     },
     {
       title: 'Build to scale',
@@ -198,7 +201,7 @@ export const capabilities: Capability[] = [
     tagline: ['Store', 'Sync', 'Deploy'],
     icon: 'cloud',
     hue: 160,
-    items: ['Supabase / PostgreSQL', 'Firebase', 'Edge Functions', 'Offline-first sync', 'Vercel & Netlify', 'Google Play Console'],
+    items: ['Supabase / PostgreSQL', 'Firebase', 'Edge Functions', 'Background data sync', 'Vercel & Netlify', 'Google Play Console'],
   },
   {
     title: 'Architecture & Tools',
@@ -214,7 +217,7 @@ export const capabilities: Capability[] = [
 export const marquee = [
   'React Native',
   'iOS & Android',
-  'Offline-First Sync',
+  'Background Sync',
   'Geo-Fencing',
   'Real-time Apps',
   'Microsoft SSO',
@@ -246,7 +249,7 @@ export const experience: Experience[] = [
     role: 'Software Engineer · Chennai',
     period: 'Jul 2022 — Sep 2026',
     detail:
-      'Owned React Native features end to end — API integration, testing and production release — across HRMS, ATS and government apps. Built reusable components and custom hooks, offline-first sync, geo-fencing, real-time chat, Microsoft SSO and RBAC, and tuned performance on Android and iOS for 1,000+ users across 10+ client organisations.',
+      'Owned React Native features end to end — API integration, testing and production release — across HRMS, ATS and government apps. Built reusable components and custom hooks, background sync, geo-fencing, real-time chat, Microsoft SSO and RBAC, and tuned performance on Android and iOS for 1,000+ users across 10+ client organisations.',
     kind: 'work',
   },
   {

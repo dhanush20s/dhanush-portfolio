@@ -108,7 +108,8 @@ export function Hero() {
 
       <FadeIn className="hero__foot" delay={AFTER_PRELOADER + 0.45} y={26}>
         <div>
-          <p className="hero__headline">{person.headline}</p>
+          <p className="hero__headline hero__headline--lead">{person.headline}</p>
+          <p className="hero__subline">{person.headlineSub}</p>
           <div className="hero__actions">
             <button
               className="hero__cta hero__cta--primary"
